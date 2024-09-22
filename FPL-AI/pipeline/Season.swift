@@ -15,4 +15,14 @@ struct Season {
         let startYear = month < monthBetweenSeasons ? twoDigitYear - 1 : twoDigitYear
         return "\(startYear)\(startYear + 1)"
     }
+    
+    /**
+     Convert season in "1819" format to the year the season started (2018)
+     */
+    func yearFrom(seasonString: String) -> Int? {
+        guard seasonString.count == 4, let yearPrefix = Int(seasonString.prefix(2)) else {
+               return nil
+           }
+           return 2000 + yearPrefix
+    }
 }

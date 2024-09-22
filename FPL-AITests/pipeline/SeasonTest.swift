@@ -37,5 +37,17 @@ final class SeasonTest: XCTestCase {
         let season = testSeason.getSeason(date: date)
         XCTAssertEqual("2324", season)
     }
+    
+    func testShouldReturn2018GivenSeasonString1819() throws {
+        let season = "1819"
+        let year = testSeason.yearFrom(seasonString: season)
+        XCTAssertEqual(2018, year)
+    }
+    
+    func testShouldReturn2010GivenSeasonString1011() throws {
+        let season = "1011"
+        let year = testSeason.yearFrom(seasonString: season)
+        XCTAssertEqual(2010, year)
+    }
 
 }
